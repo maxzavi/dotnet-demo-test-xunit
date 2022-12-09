@@ -11,13 +11,13 @@ pool:
 
 steps:
 - task: DotNetCoreCLI@2
+  displayName: 'Test project'
+  inputs:
+    command: 'test'
+- task: DotNetCoreCLI@2
   displayName: 'Publish project'
   inputs:
     command: 'publish'
     publishWebProjects: false
     zipAfterPublish: false
     modifyOutputPath: false
-- task: DotNetCoreCLI@2
-  displayName: 'Test project'
-  inputs:
-    command: 'test'
