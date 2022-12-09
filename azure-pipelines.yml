@@ -29,7 +29,7 @@ steps:
     containerRegistry: 'docker_registry'
     repository: 'mzavaletav/demo-test-xunit'
     command: 'buildAndPush'
-    Dockerfile: 'Dockerfile'
+    Dockerfile: 'publish/Dockerfile'
     addPipelineData: false
     addBaseImageData: false
     buildContext: 'publish'
