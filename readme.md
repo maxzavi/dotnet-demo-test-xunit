@@ -31,3 +31,9 @@ dotnet add test-proj/test-proj.csproj reference test-app/test-app.csproj
 ```cmd
 dotnet test test-proj/test-proj.csproj
 ```
+
+* Add version control, create .gitignore file, using comand *dotnet new gitignore*
+
+```cmd
+dotnet new gitignore
+```

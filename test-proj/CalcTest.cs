@@ -1,6 +1,8 @@
 public class CalcTest
 {
+    [Trait("User", "Login_Successful")]
     [Fact]
+
     public void testAdd(){
         int result = Calc.add(1,2);
         Assert.Equal(3, result);
