@@ -10,10 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-#- task: DotNetCoreCLI@2
-#  displayName: 'Test project'
-#  inputs:
-#    command: 'test'
+- task: DotNetCoreCLI@2
+  displayName: 'Test project'
+  inputs:
+    command: 'test'
 
 - task: DotNetCoreCLI@2
   displayName: 'Publish..'
@@ -23,3 +23,12 @@ steps:
     arguments: '-c Release -o publish'
     zipAfterPublish: false
     modifyOutputPath: false
+- task: Docker@2
+  displayName: 'Build and Push docker image'
+  inputs:
+    containerRegistry: 'docker_registry'
+    repository: 'mzavaletav/demo-test-xunit'
+    command: 'buildAndPush'
+    Dockerfile: 'Dockerfile'
+    addPipelineData: false
+    addBaseImageData: false
