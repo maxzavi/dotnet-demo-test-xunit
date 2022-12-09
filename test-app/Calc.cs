@@ -1,8 +1,8 @@
 public class Calc
 {
     public static int add (int x, int y){
-        //return x+y+0;
-        return 0;
+        return x+y+0;
+        //return 0;
     }
     public static int substr(int x, int y){
         if (x<y) throw new NegativeResultException();
