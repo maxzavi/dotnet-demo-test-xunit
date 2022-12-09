@@ -5,7 +5,7 @@ public class Calc
         //return 0;
     }
     public static int substr(int x, int y){
-        //if (x<y) throw new NegativeResultException();
+        if (x<y) throw new NegativeResultException();
         return x-y;
     }
 }
