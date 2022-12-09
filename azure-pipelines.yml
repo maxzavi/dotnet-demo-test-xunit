@@ -32,3 +32,4 @@ steps:
     Dockerfile: 'Dockerfile'
     addPipelineData: false
     addBaseImageData: false
+    buildContext: 'publish'
