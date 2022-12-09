@@ -5,10 +5,12 @@ public class Calc
         //return 0;
     }
     public static int substr(int x, int y){
-        if (x<y) throw new NegativeResultException();
+        if (x<y) throw new NegativeResultException("Result < 0 !!!");
         return x-y;
     }
 }
 
 public class NegativeResultException:Exception {
+    public NegativeResultException (string message): base(message){
+    }
 }
