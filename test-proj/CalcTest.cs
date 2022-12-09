@@ -27,4 +27,16 @@ public class CalcTest
         // Then
         Assert.Equal(0, result);
     }
+
+    [Fact]
+    public void TestSubstraction_ThrowNegativeValue()
+    {
+        // Given
+        int x = 1;
+        int y = 2;
+        // When
+        Action action = ()=> Calc.substr(x,y);
+        // Then
+        Assert.Throws<NegativeResultException>(action);
+    }
 }
