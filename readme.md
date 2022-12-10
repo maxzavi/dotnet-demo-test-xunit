@@ -37,3 +37,5 @@ dotnet test test-proj/test-proj.csproj
 ```cmd
 dotnet new gitignore
 ```
+
+* Optional use extension **.NET Core Test Explorer**

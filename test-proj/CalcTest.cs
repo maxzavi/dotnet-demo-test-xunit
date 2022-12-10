@@ -16,7 +16,7 @@ public class CalcTest
     [Fact]
     public void TestSubstraction()
     {
-        int result = Calc.substr(3,1);
+        int result = Calc.substract(3,1);
         Assert.Equal(2, result);
     }
     [Fact]
@@ -25,7 +25,7 @@ public class CalcTest
         // Given
         int x=5;
         // When
-        int result = Calc.substr(x,x);
+        int result = Calc.substract(x,x);
         // Then
         Assert.Equal(0, result);
     }
@@ -37,7 +37,7 @@ public class CalcTest
         int x = 1;
         int y = 2;
         // When
-        Action action = ()=> Calc.substr(x,y);
+        Action action = ()=> Calc.substract(x,y);
         // Then
         Assert.Throws<NegativeResultException>(action);
     }

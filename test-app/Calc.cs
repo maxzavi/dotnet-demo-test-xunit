@@ -4,7 +4,7 @@ public class Calc
         return x+y+0;
         //return 0;
     }
-    public static int substr(int x, int y){
+    public static int substract(int x, int y){
         if (x<y) throw new NegativeResultException("Result < 0 !!!");
         return x-y;
     }
