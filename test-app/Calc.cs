@@ -5,15 +5,19 @@ public class Calc
         //return 0;
     }
     public static int substract(int x, int y){
-        if (x<y) throw new NegativeResultException("Result < 0 !!!");
+        if (x<y) throw new NegativeResultException(-1000,"Result < 0 !!!");
         return x-y;
     }
     public static double addDouble(double x, double y){
         return x+y;
     }
+
+    public static List<int> GetFirtsPairs => new List<int>{0,2,4,6,8,10};
 }
 
 public class NegativeResultException:Exception {
-    public NegativeResultException (string message): base(message){
+    public int code {get;set;}
+    public NegativeResultException (int code, string message): base(message){
+        this.code=code;
     }
 }
