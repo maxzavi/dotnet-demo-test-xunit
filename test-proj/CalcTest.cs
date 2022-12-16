@@ -1,44 +1,66 @@
 public class CalcTest
 {
-    [Trait("User", "Login_Successful")]
     [Fact]
-
-    public void testAdd(){
+    public void add_GivenTwoValues_ReturnValue(){
+        //Arrange
+        var expected=3;
+        //Act
         int result = Calc.add(1,2);
-        Assert.Equal(3, result);
+        //Assert
+        Assert.Equal(expected, result);
     }
     [Fact]
-    public void testAddZero(){
+    public void add_AddZero_ReturnSelf(){
+        //Arrange
         int myVal = 5;
+        //Act
         int result = Calc.add(0,myVal);
+        //Assert
         Assert.Equal(myVal, result);
     }
     [Fact]
-    public void TestSubstraction()
+    public void substract_GivenTwoValues_ReturnValue()
     {
+        //Arrange
+        var expected = 2;
+        //Act
         int result = Calc.substract(3,1);
-        Assert.Equal(2, result);
+        //Assert
+        Assert.Equal(expected, result);
     }
     [Fact]
-    public void TestSubstractionSelf()
+    public void substract_GivenSameValues_ReturnZero()
     {
-        // Given
+        // Arrange
         int x=5;
-        // When
+        int expected=0;
+        // Act
         int result = Calc.substract(x,x);
-        // Then
-        Assert.Equal(0, result);
+        // Assert
+        Assert.Equal(expected, result);
     }
 
     [Fact]
-    public void TestSubstraction_ThrowNegativeValue()
+    public void substract_GivenTwoValuesIncorrect_ThrowNegativeValue()
     {
-        // Given
+        // Arrange
         int x = 1;
         int y = 2;
-        // When
+        // Act
         Action action = ()=> Calc.substract(x,y);
-        // Then
+        // Assert
         Assert.Throws<NegativeResultException>(action);
+    }
+
+    [Fact]
+    public void addDouble_GivenTwoDoubles_ReturnDouble (){
+        //Arrange
+        double x= 1.54;
+        double y =2.32;
+        double expected=3.9;
+        //Act
+        double result = Calc.addDouble (x,y);
+        //Assert
+        Assert.Equal(expected,result,1);
     }
 }

@@ -8,6 +8,9 @@ public class Calc
         if (x<y) throw new NegativeResultException("Result < 0 !!!");
         return x-y;
     }
+    public static double addDouble(double x, double y){
+        return x+y;
+    }
 }
 
 public class NegativeResultException:Exception {
