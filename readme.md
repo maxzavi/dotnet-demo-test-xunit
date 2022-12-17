@@ -39,3 +39,15 @@ dotnet new gitignore
 ```
 
 * Optional use extension **.NET Core Test Explorer**
+
+* Publish project
+
+```cmd
+dotnet publish test-app/test-app.csproj -c Release -o publish
+```
+
+* Docker build:
+
+```cmd
+docker build -f test-app/Dockerfile -t demo-test-xunit:1.0 test-app
+```
