@@ -20,4 +20,22 @@ public class GreetTest
         //Assert
         Assert.Equal(expected, result, ignoreCase:true);
     }
+    [Fact]
+    public void Greeting_GivenNullArgs_ThrowArgumentNullException(){
+        //Arrange
+        string name= null;
+        //Act
+        Action action = ()=>Greet.Greeting(name);
+        //Assert
+        Assert.Throws<ArgumentNullException> (action);
+    }
+    [Fact]
+    public void Greeting_GivenEmptyArgs_ThrowArgumentNullException(){
+        //Arrange
+        string name= "";
+        //Act
+        Action action = ()=>Greet.Greeting(name);
+        //Assert
+        Assert.Throws<ArgumentNullException> (action);
+    }
 }

@@ -5,7 +5,7 @@ public class Calc
         //return 0;
     }
     public static int substract(int x, int y){
-        if (x<y) throw new NegativeResultException(-1000,"Result < 0 !!!");
+        if (x<y) throw new NegativeResultException(1000,"Result < 0 !!!");
         return x-y;
     }
     public static double addDouble(double x, double y){

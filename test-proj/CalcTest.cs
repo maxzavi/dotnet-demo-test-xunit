@@ -1,6 +1,7 @@
 public class CalcTest
 {
     [Fact]
+    [Trait("category","Group1")]
     public void add_GivenTwoValues_ReturnValue(){
         //Arrange
         var expected=3;
@@ -10,6 +11,7 @@ public class CalcTest
         Assert.Equal(expected, result);
     }
     [Fact]
+    [Trait("category","Group1")]
     public void add_AddZero_ReturnSelf(){
         //Arrange
         int myVal = 5;
@@ -49,6 +51,19 @@ public class CalcTest
         Action action = ()=> Calc.substract(x,y);
         // Assert
         Assert.Throws<NegativeResultException>(action);
+    }
+    [Fact]
+    public void substract_GivenTwoValuesIncorrect_ThrowNegativeValueCode1000()
+    {
+        // Arrange
+        int x = 2;
+        int y = 4;
+        int expectedCode =1000;
+        // Act
+        Action action = ()=> Calc.substract(x,y);
+        // Assert
+        var negativeResultException  = Assert.Throws<NegativeResultException>(action);
+        Assert.Equal(expectedCode,negativeResultException.code);
     }
     [Fact]
     public void addDouble_GivenTwoDoubles_ReturnDouble (){
