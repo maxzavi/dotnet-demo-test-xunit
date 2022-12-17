@@ -40,7 +40,9 @@ dotnet new gitignore
 
 * Optional use extension **.NET Core Test Explorer**
 
-* Publish project
+## Publish project
+
+Using **dotnet publish**, in folder *publish*
 
 ```cmd
 dotnet publish test-app/test-app.csproj -c Release -o publish
@@ -48,10 +50,17 @@ dotnet publish test-app/test-app.csproj -c Release -o publish
 
 * Docker build:
 
-Using dockerfile with publish generated:
+Using [dockerfile](test-app/Dockerfile) with publish generated, previously publish using **dotnet publish**:
 
 ```cmd
-docker build -f test-app/Dockerfile -t demo-test-xunit:1.0 test-app
+docker build -f publish/Dockerfile -t demo-test-xunit:1.0 publish 
 ```
 
 This Dockerfile uses multi-stage builds, which optimizes the final size of the image by layering the build and leaving only required artifacts. For more information, see Docker Docs: [multi-stage builds](https://docs.docker.com/build/building/multi-stage/).
+
+In this case, use [Dockerfile.multi](test-app/Dockerfile.multi)
+
+```cmd
+docker build -f test-app/Dockerfile.multi -t demo-test-xunit-md:1.0 test-app
+```
+
