@@ -48,6 +48,10 @@ dotnet publish test-app/test-app.csproj -c Release -o publish
 
 * Docker build:
 
+Using dockerfile with publish generated:
+
 ```cmd
 docker build -f test-app/Dockerfile -t demo-test-xunit:1.0 test-app
 ```
+
+This Dockerfile uses multi-stage builds, which optimizes the final size of the image by layering the build and leaving only required artifacts. For more information, see Docker Docs: [multi-stage builds](https://docs.docker.com/build/building/multi-stage/).
