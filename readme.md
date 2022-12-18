@@ -6,6 +6,12 @@
 dotnet new sln
 ```
 
+* Using **dotnet new --list** show templates enabled:
+
+```cmd
+dotnet new --list
+```
+
 * Create and add project to solution using *dotnet new console* and *dotnet sln add*
 
 ```cmd
